@@ -44,6 +44,7 @@ const NEWS = [
   }
 ];
 
+
 const renderNews = (newsData) => {
   // Filter top news (assuming only one top news item)
   const topNews = newsData.filter(news => news.isTopNews)[0]; // Access the first element of the filtered array
@@ -123,5 +124,7 @@ const renderNews = (newsData) => {
     });
   });
 };
+
+
 
 renderNews(NEWS);

@@ -16,7 +16,7 @@ header {
 
 .h1-site-name {
   font-size: 25px;
-  font-family: "Barrio", system-ui;
+  font-family: "Barriecito", system-ui;
   text-wrap: wrap;
 }
 
@@ -42,20 +42,22 @@ header {
   background: #ffffff;
   color: rgb(0, 0, 0);
   border: #000000 solid 3px;
+  display: block;
   width: 40px;
   height: 40px;
-  display: block;
   cursor: pointer;
   margin-left: auto;
   border-radius: 10px;
   font-size: larger;
   font-weight: 700;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .big-news-section {
   display: flex;
-  justify-content: center;
+  align-items: center;
   margin: 0 auto;
   padding: 4px;
 }
@@ -87,6 +89,7 @@ article {
   display: flex;
   width: 200px;
   border: solid 0.5px gray;
+  padding: 15px 0;
 }
 
 h2 {
@@ -197,7 +200,7 @@ h3 {
   a {
     padding: 0 8px;
     text-decoration: none;
-    font-family: "Barrio", system-ui;
+    font-family: "Barriecito", system-ui;
     font-weight: 700;
     font-size: 20px;
     color: darkred;
@@ -206,6 +209,7 @@ h3 {
   .big-news {
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
     padding: 10px;
   }
 
@@ -251,15 +255,16 @@ h3 {
   a {
     padding: 0 8px;
     text-decoration: none;
-    font-family: "Barrio", system-ui;
+    font-family: "Barriecito", system-ui;
     font-weight: 700;
     font-size: 20px;
-    color: rgb(94, 0, 0);
+    color: darkred;
   }
 
   .big-news {
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
     padding: 10px;
   }
 
