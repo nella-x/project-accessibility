@@ -151,21 +151,31 @@ h3 {
 
 /* Expanded state for expandable content */
 .body-content.expanded {
-  display: block;
   margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  background: rgb(255, 255, 255);
+  align-items: center;
+  text-align: left;
 }
+
 
 .button-box {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 4px 12px;
+}
+
+button {
+  font-family: Helvetica, sans-serif;
+  margin: 2px;
 }
 
 .close-button {
   background-color: darkslategrey;
   color: white;
-  width: 120px;
+  width: 80px;
   text-align: center;
   font-size: 16px;
   padding: 10px 15px;
@@ -174,10 +184,9 @@ h3 {
 }
 
 .home-button {
-  width: 40%;
   background: darkblue;
   color: white;
-  width: 120px;
+  width: 80px;
   text-align: center;
   font-size: 16px;
   padding: 10px 15px;
@@ -229,14 +238,14 @@ h3 {
 
   .small-news {
     display: flex;
-    width: 95%;
+    width: 94%;
     align-items: center;
     text-align: left;
   }
 
   .small-img {
     display: flex;
-    width: 280px;
+    width: 240px;
   }
 
 }
@@ -285,7 +294,7 @@ h3 {
 
   .small-img {
     display: flex;
-    width: 240px;
+    width: 200px;
   }
 
 }

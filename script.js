@@ -45,14 +45,12 @@ const NEWS = [
 ];
 
 
-const renderNews = (newsData) => {
-  // Filter top news (assuming only one top news item)
-  const topNews = newsData.filter(news => news.isTopNews)[0]; // Access the first element of the filtered array
 
-  // Filter grid news (all non-top news)
+const renderNews = (newsData) => {
+  const topNews = newsData.filter(news => news.isTopNews)[0];
+
   const gridNews = newsData.filter(news => !news.isTopNews);
 
-  // Render top news
   const bigNewsContainer = document.getElementById('bigNews');
   bigNewsContainer.innerHTML = `
     <div class="big-news">
@@ -70,7 +68,7 @@ const renderNews = (newsData) => {
       </div>
     </div>
   `;
-  // Render grid news (optional, depending on your needs)
+
   const smallNewsContainer = document.getElementById('smallNews');
   if (gridNews.length > 0) { // Check if there's any grid news before rendering
     smallNewsContainer.innerHTML = gridNews.map(news => `
@@ -88,39 +86,33 @@ const renderNews = (newsData) => {
         </article>
       </div>
     </div>
-  `).join(''); // Join the individual HTML strings with an empty string
+  `).join('');
   }
 
-  // Add event listeners to expand buttons
   const expandButtons = document.querySelectorAll('.expand-button');
   expandButtons.forEach(button => {
     button.addEventListener('click', () => {
       const content = button.nextElementSibling;
       content.classList.toggle('expanded');
 
-      // Add event listener to close button
       const closeButton = content.querySelector('.close-button');
       if (closeButton) {
         closeButton.addEventListener('click', () => {
           content.classList.remove('expanded');
-
-          // Focus the expand button after closing
           button.focus();
-
         });
       }
-    });
-  });
-  // Add home button click event listener
-  const homeButtons = document.querySelectorAll('.home-button');
-  homeButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      // Close expanded content if open
-      const expandedContent = document.querySelector('.expanded.body-content');
-      if (expandedContent) {
-        expandedContent.classList.remove('expanded');
-      }
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      const homeButtons = document.querySelectorAll('.home-button');
+      homeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          // Close expanded content if open
+          const expandedContent = document.querySelector('.expanded.body-content');
+          if (expandedContent) {
+            expandedContent.classList.remove('expanded');
+          }
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      });
     });
   });
 };
